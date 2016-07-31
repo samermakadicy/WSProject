@@ -22,6 +22,8 @@
 		9336E3671D385C54009CA15D /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336E3661D385C54009CA15D /* ThirdViewController.swift */; };
 		9336E3741D3860A0009CA15D /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9336E3711D3860A0009CA15D /* ProgressHUD.bundle */; };
 		9336E3751D3860A0009CA15D /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9336E3731D3860A0009CA15D /* ProgressHUD.m */; };
+		93BF115A1D4E9B9D007A2A5A /* PickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF11591D4E9B9D007A2A5A /* PickerTableViewCell.swift */; };
+		93BF115C1D4E9CF5007A2A5A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF115B1D4E9CF5007A2A5A /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		9336E3711D3860A0009CA15D /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		9336E3721D3860A0009CA15D /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
 		9336E3731D3860A0009CA15D /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		93BF11591D4E9B9D007A2A5A /* PickerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerTableViewCell.swift; sourceTree = "<group>"; };
+		93BF115B1D4E9CF5007A2A5A /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		CF7CE03955DB40C8E1B9D44E /* Pods-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.release.xcconfig"; path = "Pods/Target Support Files/Pods-Test/Pods-Test.release.xcconfig"; sourceTree = "<group>"; };
 		FFD6AEC11E6954B75664C9CC /* Pods-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Test/Pods-Test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,6 +131,8 @@
 				9336E3641D385C43009CA15D /* SecondViewController.swift */,
 				9336E3661D385C54009CA15D /* ThirdViewController.swift */,
 				930031071D435D3D005CF6F8 /* CellViewController.swift */,
+				93BF11591D4E9B9D007A2A5A /* PickerTableViewCell.swift */,
+				93BF115B1D4E9CF5007A2A5A /* TableViewController.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -267,10 +273,12 @@
 			files = (
 				930031081D435D3D005CF6F8 /* CellViewController.swift in Sources */,
 				9336E3751D3860A0009CA15D /* ProgressHUD.m in Sources */,
+				93BF115A1D4E9B9D007A2A5A /* PickerTableViewCell.swift in Sources */,
 				9328A2CD1D3552DC0002E6B5 /* LoginViewController.swift in Sources */,
 				8E1677121D1C1BAA004F88D0 /* AppDelegate.swift in Sources */,
 				9328A2C91D35503E0002E6B5 /* WelcomeViewController.swift in Sources */,
 				9336E3631D385C36009CA15D /* FirstViewController.swift in Sources */,
+				93BF115C1D4E9CF5007A2A5A /* TableViewController.swift in Sources */,
 				9336E3651D385C43009CA15D /* SecondViewController.swift in Sources */,
 				9328A2CF1D3552F90002E6B5 /* RegisterViewController.swift in Sources */,
 				9336E3671D385C54009CA15D /* ThirdViewController.swift in Sources */,

@@ -12,10 +12,13 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet weak var activityListTable: UITableView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        
         
         if NSUserDefaults.standardUserDefaults().objectForKey("activityList") != nil {
             
@@ -40,10 +43,15 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        
         let cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
         cell.textLabel?.text = activityList[indexPath.row]
-        //  cell.detailTextLabel?.text = "some text"
+        cell.textLabel?.font = UIFont.boldSystemFontOfSize(18.0)
+        
+        //cell.detailTextLabel?.text = "some text"
+        
         cell.detailTextLabel?.text = dateList[indexPath.row]
+        cell.detailTextLabel?.font = UIFont.systemFontOfSize(14.0)
         
         return cell
     }
