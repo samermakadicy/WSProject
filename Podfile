@@ -3,8 +3,8 @@ platform :ios, '9.0'
 
 target 'Test' do
   
-  #pod 'Firebase/Core'
-  #pod 'Firebase/Database'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
   pod 'Backendless'	
 
 end
