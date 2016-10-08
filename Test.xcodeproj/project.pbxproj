@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		207325D65FD00FF477EBD803 /* libPods-Test.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F50A93E0B078170654EA8CC /* libPods-Test.a */; };
+		08DAD8C42F2E881AE1F70372 /* Pods_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B813F0108A425A1CEFB9F3C3 /* Pods_Test.framework */; };
 		8E1677121D1C1BAA004F88D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1677111D1C1BAA004F88D0 /* AppDelegate.swift */; };
 		8E1677191D1C1BAB004F88D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E1677171D1C1BAB004F88D0 /* Main.storyboard */; };
 		8E16771B1D1C1BAC004F88D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E16771A1D1C1BAC004F88D0 /* Assets.xcassets */; };
@@ -26,10 +26,10 @@
 		936589881DA963B80089A3CA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936589871DA963B80089A3CA /* WelcomeViewController.swift */; };
 		93BF115C1D4E9CF5007A2A5A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF115B1D4E9CF5007A2A5A /* TableViewController.swift */; };
 		93BF1BA91DA9607B0021412B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF1BA81DA9607B0021412B /* FirstViewController.swift */; };
+		93D204B61DA97D8D00AFC844 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93D204B51DA97D8D00AFC844 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3F50A93E0B078170654EA8CC /* libPods-Test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E16770E1D1C1BAA004F88D0 /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E1677111D1C1BAA004F88D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E1677181D1C1BAB004F88D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,6 +51,8 @@
 		936589871DA963B80089A3CA /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		93BF115B1D4E9CF5007A2A5A /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		93BF1BA81DA9607B0021412B /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		93D204B51DA97D8D00AFC844 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B813F0108A425A1CEFB9F3C3 /* Pods_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7CE03955DB40C8E1B9D44E /* Pods-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.release.xcconfig"; path = "Pods/Target Support Files/Pods-Test/Pods-Test.release.xcconfig"; sourceTree = "<group>"; };
 		FFD6AEC11E6954B75664C9CC /* Pods-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Test/Pods-Test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				207325D65FD00FF477EBD803 /* libPods-Test.a in Frameworks */,
+				08DAD8C42F2E881AE1F70372 /* Pods_Test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,7 +72,7 @@
 		0047F3384598EC249B8E2A2B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3F50A93E0B078170654EA8CC /* libPods-Test.a */,
+				B813F0108A425A1CEFB9F3C3 /* Pods_Test.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -114,6 +116,7 @@
 				9328A2D11D35645B0002E6B5 /* GeneralSettings.swift */,
 				8E16771A1D1C1BAC004F88D0 /* Assets.xcassets */,
 				8E16771C1D1C1BAC004F88D0 /* LaunchScreen.storyboard */,
+				93D204B51DA97D8D00AFC844 /* GoogleService-Info.plist */,
 				8E16771F1D1C1BAC004F88D0 /* Info.plist */,
 			);
 			path = Test;
@@ -225,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9336E3741D3860A0009CA15D /* ProgressHUD.bundle in Resources */,
+				93D204B61DA97D8D00AFC844 /* GoogleService-Info.plist in Resources */,
 				8E16771E1D1C1BAC004F88D0 /* LaunchScreen.storyboard in Resources */,
 				8E16771B1D1C1BAC004F88D0 /* Assets.xcassets in Resources */,
 				8E75A5CB1D902D9600E451C5 /* Palms.jpg in Resources */,

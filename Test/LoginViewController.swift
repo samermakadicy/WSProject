@@ -51,7 +51,7 @@ class LoginViewController: UIViewController {
     
     func loginUser(_ email: String, password: String) {
         
-        backendless?.userService.login(email, password: password, response: { (user: BackendlessUser?) in
+            backendless?.userService.login(email, password: password, response: { (user: BackendlessUser?) in
             
             ProgressHUD.dismiss()
             
@@ -60,7 +60,7 @@ class LoginViewController: UIViewController {
             vc.selectedIndex = 0
             
             self.present(vc, animated: true, completion: nil)
-            
+
             }, error: { (error: Fault?) in
                 
                 ProgressHUD.showError("Incorrect Username/Password")

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         backendless?.initApp(APP_ID, secret:SECRET_KEY, version:VERSION_NUM)
         // If you plan to use Backendless Media Service, uncomment the following line (iOS ONLY!)
         // backendless.mediaService = MediaService()
+
+        FIRApp.configure()
+        
         
         return true
     }
