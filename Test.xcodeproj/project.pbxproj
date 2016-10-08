@@ -16,15 +16,16 @@
 		8E34A6D61D90A717006B409A /* defaultUserImg.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8E34A6D51D90A717006B409A /* defaultUserImg.gif */; };
 		8E75A5C91D902D8600E451C5 /* UnderwaterBG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E75A5C81D902D8600E451C5 /* UnderwaterBG.jpg */; };
 		8E75A5CB1D902D9600E451C5 /* Palms.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E75A5CA1D902D9600E451C5 /* Palms.jpg */; };
-		9328A2C91D35503E0002E6B5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9328A2C81D35503E0002E6B5 /* WelcomeViewController.swift */; };
-		9328A2CD1D3552DC0002E6B5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9328A2CC1D3552DC0002E6B5 /* LoginViewController.swift */; };
-		9328A2CF1D3552F90002E6B5 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9328A2CE1D3552F90002E6B5 /* RegisterViewController.swift */; };
+		930D855D1D9B3FA600D33293 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930D855C1D9B3FA600D33293 /* LocationViewController.swift */; };
 		9328A2D21D35645B0002E6B5 /* GeneralSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9328A2D11D35645B0002E6B5 /* GeneralSettings.swift */; };
-		9336E3631D385C36009CA15D /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336E3621D385C36009CA15D /* FirstViewController.swift */; };
-		9336E3651D385C43009CA15D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336E3641D385C43009CA15D /* SecondViewController.swift */; };
 		9336E3741D3860A0009CA15D /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9336E3711D3860A0009CA15D /* ProgressHUD.bundle */; };
 		9336E3751D3860A0009CA15D /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9336E3731D3860A0009CA15D /* ProgressHUD.m */; };
+		936589821DA963500089A3CA /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936589811DA963500089A3CA /* SecondViewController.swift */; };
+		936589841DA963860089A3CA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936589831DA963860089A3CA /* RegisterViewController.swift */; };
+		936589861DA963A10089A3CA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936589851DA963A10089A3CA /* LoginViewController.swift */; };
+		936589881DA963B80089A3CA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936589871DA963B80089A3CA /* WelcomeViewController.swift */; };
 		93BF115C1D4E9CF5007A2A5A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF115B1D4E9CF5007A2A5A /* TableViewController.swift */; };
+		93BF1BA91DA9607B0021412B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF1BA81DA9607B0021412B /* FirstViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,16 +40,17 @@
 		8E34A6D51D90A717006B409A /* defaultUserImg.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = defaultUserImg.gif; sourceTree = "<group>"; };
 		8E75A5C81D902D8600E451C5 /* UnderwaterBG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = UnderwaterBG.jpg; sourceTree = "<group>"; };
 		8E75A5CA1D902D9600E451C5 /* Palms.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Palms.jpg; sourceTree = "<group>"; };
-		9328A2C81D35503E0002E6B5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = SOURCE_ROOT; };
-		9328A2CC1D3552DC0002E6B5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = SOURCE_ROOT; };
-		9328A2CE1D3552F90002E6B5 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = SOURCE_ROOT; };
+		930D855C1D9B3FA600D33293 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		9328A2D11D35645B0002E6B5 /* GeneralSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralSettings.swift; sourceTree = "<group>"; };
-		9336E3621D385C36009CA15D /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = SOURCE_ROOT; };
-		9336E3641D385C43009CA15D /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = SOURCE_ROOT; };
 		9336E3711D3860A0009CA15D /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		9336E3721D3860A0009CA15D /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
 		9336E3731D3860A0009CA15D /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		936589811DA963500089A3CA /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		936589831DA963860089A3CA /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		936589851DA963A10089A3CA /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		936589871DA963B80089A3CA /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		93BF115B1D4E9CF5007A2A5A /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		93BF1BA81DA9607B0021412B /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		CF7CE03955DB40C8E1B9D44E /* Pods-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.release.xcconfig"; path = "Pods/Target Support Files/Pods-Test/Pods-Test.release.xcconfig"; sourceTree = "<group>"; };
 		FFD6AEC11E6954B75664C9CC /* Pods-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Test/Pods-Test.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,9 +106,8 @@
 		8E1677101D1C1BAA004F88D0 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				933B5DEF1D99EB4800B4D892 /* Images */,
 				8E1677111D1C1BAA004F88D0 /* AppDelegate.swift */,
-				8E75A5CA1D902D9600E451C5 /* Palms.jpg */,
-				8E34A6D51D90A717006B409A /* defaultUserImg.gif */,
 				9328A2D01D3564440002E6B5 /* Login */,
 				9336E3681D385C5F009CA15D /* Main */,
 				8E1677171D1C1BAB004F88D0 /* Main.storyboard */,
@@ -121,10 +122,9 @@
 		9328A2D01D3564440002E6B5 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				8E75A5C81D902D8600E451C5 /* UnderwaterBG.jpg */,
-				9328A2C81D35503E0002E6B5 /* WelcomeViewController.swift */,
-				9328A2CE1D3552F90002E6B5 /* RegisterViewController.swift */,
-				9328A2CC1D3552DC0002E6B5 /* LoginViewController.swift */,
+				936589871DA963B80089A3CA /* WelcomeViewController.swift */,
+				936589831DA963860089A3CA /* RegisterViewController.swift */,
+				936589851DA963A10089A3CA /* LoginViewController.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -132,9 +132,10 @@
 		9336E3681D385C5F009CA15D /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				9336E3621D385C36009CA15D /* FirstViewController.swift */,
-				9336E3641D385C43009CA15D /* SecondViewController.swift */,
+				93BF1BA81DA9607B0021412B /* FirstViewController.swift */,
+				936589811DA963500089A3CA /* SecondViewController.swift */,
 				93BF115B1D4E9CF5007A2A5A /* TableViewController.swift */,
+				930D855C1D9B3FA600D33293 /* LocationViewController.swift */,
 				8E34A6D31D9094F5006B409A /* ActivityDescriptionController.swift */,
 			);
 			name = Main;
@@ -149,6 +150,16 @@
 			);
 			name = ProgressHUD;
 			path = Test/ProgressHUD;
+			sourceTree = "<group>";
+		};
+		933B5DEF1D99EB4800B4D892 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				8E75A5CA1D902D9600E451C5 /* Palms.jpg */,
+				8E34A6D51D90A717006B409A /* defaultUserImg.gif */,
+				8E75A5C81D902D8600E451C5 /* UnderwaterBG.jpg */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,11 +192,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Wasan Shubbar";
 				TargetAttributes = {
 					8E16770D1D1C1BAA004F88D0 = {
 						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -277,16 +289,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				936589821DA963500089A3CA /* SecondViewController.swift in Sources */,
+				936589841DA963860089A3CA /* RegisterViewController.swift in Sources */,
+				936589881DA963B80089A3CA /* WelcomeViewController.swift in Sources */,
 				9336E3751D3860A0009CA15D /* ProgressHUD.m in Sources */,
-				9328A2CD1D3552DC0002E6B5 /* LoginViewController.swift in Sources */,
 				8E1677121D1C1BAA004F88D0 /* AppDelegate.swift in Sources */,
+				93BF1BA91DA9607B0021412B /* FirstViewController.swift in Sources */,
 				8E34A6D41D9094F5006B409A /* ActivityDescriptionController.swift in Sources */,
-				9328A2C91D35503E0002E6B5 /* WelcomeViewController.swift in Sources */,
-				9336E3631D385C36009CA15D /* FirstViewController.swift in Sources */,
+				930D855D1D9B3FA600D33293 /* LocationViewController.swift in Sources */,
 				93BF115C1D4E9CF5007A2A5A /* TableViewController.swift in Sources */,
-				9336E3651D385C43009CA15D /* SecondViewController.swift in Sources */,
-				9328A2CF1D3552F90002E6B5 /* RegisterViewController.swift in Sources */,
 				9328A2D21D35645B0002E6B5 /* GeneralSettings.swift in Sources */,
+				936589861DA963A10089A3CA /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,8 +338,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -369,8 +384,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -389,6 +406,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -403,6 +421,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smakadicy.Test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -416,6 +435,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smakadicy.Test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

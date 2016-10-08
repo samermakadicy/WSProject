@@ -2,8 +2,8 @@
 //  SecondViewController.swift
 //  Test
 //
-//  Created by Wasan Shubbar on 23/06/2016.
-//  Copyright © 2016 Wasan Shubbar. All rights reserved.
+//  Created by Samer Makadicy on 15/07/2016.
+//  Copyright © 2016 Samer Makadicy. All rights reserved.
 //
 
 import UIKit
@@ -13,63 +13,68 @@ var dateList = [String]()
 
 class SecondViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet var activityListTable: UITableView!
+    @IBOutlet weak var activityListTable: UITableView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if NSUserDefaults.standardUserDefaults().objectForKey("activityList") != nil {
-            activityList = NSUserDefaults.standardUserDefaults().objectForKey("activityList") as! [String]
-
+        
+        activityListTable.backgroundColor = UIColor.clear
+        
+        
+        if UserDefaults.standard.object(forKey: "activityList") != nil {
+            
+            activityList = UserDefaults.standard.object(forKey: "activityList") as! [String]
         }
         
-        if NSUserDefaults.standardUserDefaults().objectForKey("dateList") != nil {
-            dateList = NSUserDefaults.standardUserDefaults().objectForKey("dateList") as! [String]
-            
+        if UserDefaults.standard.object(forKey: "dateList") != nil {
+            dateList = UserDefaults.standard.object(forKey: "dateList") as! [String]
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return activityList.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
-        cell.textLabel?.text = activityList[indexPath.row]
-      //  cell.detailTextLabel?.text = "some text"
-        cell.detailTextLabel?.text = dateList[indexPath.row]
+        
+        let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "Cell")
+        cell.textLabel?.text = activityList[(indexPath as NSIndexPath).row]
+        cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 18.0)
+        
+        cell.detailTextLabel?.text = dateList[(indexPath as NSIndexPath).row]
+        cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 14.0)
         
         return cell
     }
     
     
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
-        if editingStyle == UITableViewCellEditingStyle.Delete {
-            activityList.removeAtIndex(indexPath.row)
-            NSUserDefaults.standardUserDefaults().setObject(activityList, forKey: "activityList")
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            activityList.remove(at: (indexPath as NSIndexPath).row)
+            UserDefaults.standard.set(activityList, forKey: "activityList")
+            
+            dateList.remove(at: (indexPath as NSIndexPath).row)
+            UserDefaults.standard.set(dateList, forKey: "dateList")
+            
             activityListTable.reloadData()
-        }
-        
-        if editingStyle == UITableViewCellEditingStyle.Delete {
-            dateList.removeAtIndex(indexPath.row)
-            NSUserDefaults.standardUserDefaults().setObject(dateList, forKey: "dateList")
         }
         
     }
     
-    override func viewDidAppear(animated: Bool) {
+    
+    override func viewDidAppear(_ animated: Bool) {
         
         activityListTable.reloadData()
     }
-
-
+    
 }
-

@@ -14,68 +14,32 @@ let cellID = "cell"
 class TableViewController: UITableViewController, UITextViewDelegate {
     
     var pickerVisible = false
+    var decVisible = false
     
-    @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
-    
     @IBOutlet weak var textView: UITextView!
-
-
     @IBOutlet weak var activityTextField: UITextField!
-    
     @IBOutlet weak var selectedDate: UILabel!
-    
     @IBOutlet weak var myDatePicker: UIDatePicker!
     
-    @IBAction func datePickerAction(sender: UIDatePicker) {
-        
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
-        let strDate = dateFormatter.stringFromDate(myDatePicker.date)
-        self.selectedDate.text = strDate
-        
-    }
-    
-    
-    @IBAction func addActivityTextField(sender: UIButton) {
-        
-        if activityTextField != "" {
-            activityList.append(activityTextField.text!)
-            dateList.append(selectedDate.text!)
-            print(activityList)
-            print(dateList)
-            
-        }
-        
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("FirstVC") as! UITabBarController
-        
-        vc.selectedIndex = 1
-
-        self.presentViewController(vc, animated: true, completion: nil)
-        
-        tabBarController?.selectedIndex = 1
-
-        NSUserDefaults.standardUserDefaults().setObject(activityList, forKey: "activityList")
-        NSUserDefaults.standardUserDefaults().setObject(dateList, forKey: "dateList")
-    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         tableView.backgroundView = UIImageView(image: UIImage(named: "Palms.jpg"))
-        
-        
         tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
-        tableView.tableFooterView = UIView(frame: CGRectZero)
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
         
-        textView.textContainerInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-
+        descriptionTextView.contentInset = UIEdgeInsetsMake(0,12,0,0)
         
+        textView.textContainerInset = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 10)
         textView.delegate = self
-        textView.text = "optional"
-        textView.textColor = UIColor.lightGrayColor()
+        textView.text = "Optional"
+        textView.textColor = UIColor.lightGray
         
+        activityTextField.text = ""
     }
     
 //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
@@ -88,30 +52,30 @@ class TableViewController: UITableViewController, UITextViewDelegate {
 //    }
     
     
-    func textViewDidBeginEditing(textView: UITextView) {
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
         
-        if textView.textColor == UIColor.lightGrayColor() {
-            
+        if textView.textColor == UIColor.lightGray {
             textView.text = ""
-            textView.textColor = UIColor.blackColor()
+            textView.textColor = UIColor.black
         }
     }
     
-    func textViewDidEndEditing(textView: UITextView) {
+    func textViewDidEndEditing(_ textView: UITextView) {
         
         if textView.text == "" {
-            textView.text = "optional"
-            textView.textColor = UIColor.lightGrayColor()
+            textView.text = "Optional"
+            textView.textColor = UIColor.lightGray
         }
     }
     
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         self.view.endEditing(true)
     }
     
-    func textFieldShouldReturn(textField: UITextField!) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField!) -> Bool {
         
         activityTextField.resignFirstResponder()
         return true
@@ -128,33 +92,79 @@ class TableViewController: UITableViewController, UITextViewDelegate {
     //    }
     
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.row == 1 {
-            pickerVisible = !pickerVisible
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if(indexPath as NSIndexPath).row == 0 {
+            decVisible = !decVisible
+            
             tableView.reloadData()
         }
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            
+        else if (indexPath as NSIndexPath).row == 1 {
+            pickerVisible = !pickerVisible
+            
+            tableView.reloadData()
+        }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.row == 2 {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if ((indexPath as NSIndexPath).row == 1 && (indexPath as NSIndexPath).section == 2) {
+            
+            if decVisible == false {
+                return 0.0
+            }
+            
+            return 100.0
+        }
+        
+        else if (indexPath as NSIndexPath).row == 2 {
             if pickerVisible == false {
                 return 0.0
             }
+            
             return 165.0
         }
+        
         return 44.0
     }
     
-    @IBAction func cancelToMyActivitiesViewController(segue:UIStoryboardSegue) {
+    @IBAction func datePickerAction(_ sender: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
+        let strDate = dateFormatter.string(from: myDatePicker.date)
+        self.selectedDate.text = strDate
     }
     
-    @IBAction func saveActivityDetail(segue:UIStoryboardSegue) {
-        //tabBarController?.selectedIndex = 1
+    @IBAction func saveActivityBarButton(_ sender: AnyObject) {
         
-        
-    
+        if activityTextField.text! != "" {
+            activityList.append(activityTextField.text!)
+            dateList.append(selectedDate.text!)
+            print(activityList)
+            print(dateList)
+            
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FirstVC") as! UITabBarController
+            
+            vc.selectedIndex = 1
+            
+            self.present(vc, animated: true, completion: nil)
+            
+            tabBarController?.selectedIndex = 1
+            
+            UserDefaults.standard.set(activityList, forKey: "activityList")
+            UserDefaults.standard.set(dateList, forKey: "dateList")
+        }
     }
+       
+    
+    @IBAction func cancelToMyActivitiesViewController(_ segue:UIStoryboardSegue) {
+    }
+    
+    
+    
 
     /*
     func switchToDataTab(){

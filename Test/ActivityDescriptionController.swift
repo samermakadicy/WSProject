@@ -10,13 +10,11 @@ import Foundation
 import UIKit
 
 
-
 class ActivityDescriptionController: UIViewController {
 
-    var locationField:String! = ""
+    var locationField: String! = ""
     
     @IBOutlet weak var descriptionLabel: UILabel!
-    
     @IBOutlet weak var locationLabel: UILabel!
     
     
