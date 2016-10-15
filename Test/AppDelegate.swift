@@ -12,7 +12,7 @@ import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+  
     let APP_ID = "B5B09530-C1B6-E7F5-FFA9-63D34A729A00"
     let SECRET_KEY = "3D047BB7-E5C4-12E0-FF14-563F6A96CF00"
     let VERSION_NUM = "v1"
