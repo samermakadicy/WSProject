@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
 
 
 @UIApplicationMain
@@ -28,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // backendless.mediaService = MediaService()
 
         FIRApp.configure()
-        
+        FIRDatabase.database().persistenceEnabled = true
         
         return true
     }

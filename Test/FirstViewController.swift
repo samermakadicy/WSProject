@@ -10,8 +10,14 @@ import UIKit
 
 class FirstViewController: UIViewController {
     
+    @IBOutlet weak var friendsActivityTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        friendsActivityTableView.backgroundColor = UIColor.clear
+        
+        
         
         // Do any additional setup after loading the view.
     }
@@ -20,5 +26,11 @@ class FirstViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
+    
+    
+    
     
 }
