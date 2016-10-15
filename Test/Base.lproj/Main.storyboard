@@ -351,7 +351,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2Vx-uF-Ej5">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="friendActivityCell" textLabel="Pk3-sx-79P" detailTextLabel="UuV-jm-jhG" style="IBUITableViewCellStyleSubtitle" id="yyM-Ju-TEs">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="friendActivityCell" textLabel="Pk3-sx-79P" detailTextLabel="UuV-jm-jhG" style="IBUITableViewCellStyleSubtitle" id="yyM-Ju-TEs" customClass="FirstTableViewCell" customModule="Test" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yyM-Ju-TEs" id="RsT-Ey-mci">
@@ -381,8 +381,17 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="activityDate" destination="BNC-0f-PcD" id="Ki5-jE-L4O"/>
+                                            <outlet property="activityTitle" destination="Pk3-sx-79P" id="VKw-Er-jkB"/>
+                                            <outlet property="friendName" destination="UuV-jm-jhG" id="dOj-7g-DR8"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="TkW-W5-7Ne" id="tbF-xk-tVd"/>
+                                    <outlet property="delegate" destination="TkW-W5-7Ne" id="K0I-HU-21l"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

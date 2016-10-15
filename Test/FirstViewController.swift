@@ -8,15 +8,18 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var friendsActivityTableView: UITableView!
+    var users: [BackendlessUser] = []
+    var currentUser: BackendlessUser!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         friendsActivityTableView.backgroundColor = UIColor.clear
-        
+        loadUsers()
         
         
         // Do any additional setup after loading the view.
@@ -29,8 +32,58 @@ class FirstViewController: UIViewController {
     
     
     
+    //MARK: UITableViewDataSource
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return users.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let activityCell = tableView.dequeueReusableCell(withIdentifier: "friendActivityCell", for: indexPath)
+        
+        let user = users[indexPath.row]
+        
+        activityCell.textLabel?.text = user.name as String?
+    
+        return activityCell
+    }
     
     
+    
+    
+    //MARK: Load Backendless Users
+    
+    func loadUsers() {
+        
+        //theCurrentUser is the currently found backendlessuser declared in GeneralSettings.swift
+        
+        let whereClause = "objectId != '\(theCurrentUser?.objectId)'"
+        
+        let dataQuery = BackendlessDataQuery()
+        dataQuery.whereClause = whereClause
+        
+        let dataStore = backendless?.persistenceService.of(BackendlessUser.ofClass())
+        dataStore?.find(dataQuery, response: { (users: BackendlessCollection?) -> Void in
+            
+            self.users = users?.data as! [BackendlessUser]
+            self.friendsActivityTableView.reloadData()
+            
+            for user in (users?.data)! {
+                let u = user as! BackendlessUser
+                print(u.name)
+                
+            }
+            
+            }, error: { (fault: Fault?) in
+                print("Error, Couldn't retreive users: \(fault)")
+        })
+        
+        
+    }
     
     
 }

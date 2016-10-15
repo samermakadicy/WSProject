@@ -68,16 +68,6 @@ class ChooseUserViewController: UIViewController, UITableViewDelegate, UITableVi
 
     
     
-    //MARK: Load Backendless Users
-    
-    func loadUsers() {
-        
-        let whereClause = "objectId != ''"
-        
-        
-    }
-    
-    
     
     /*
     // MARK: - Navigation

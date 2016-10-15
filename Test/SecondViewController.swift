@@ -8,9 +8,6 @@
 
 import UIKit
 
-var activityList = [String]()
-var dateList = [String]()
-
 class SecondViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var activityListTable: UITableView!

@@ -25,6 +25,7 @@
 		936589861DA963A10089A3CA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936589851DA963A10089A3CA /* LoginViewController.swift */; };
 		936589881DA963B80089A3CA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936589871DA963B80089A3CA /* WelcomeViewController.swift */; };
 		93690A861DB27B77003B497C /* ChooseUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93690A851DB27B77003B497C /* ChooseUserViewController.swift */; };
+		93690A881DB2A0D5003B497C /* FirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93690A871DB2A0D5003B497C /* FirstTableViewCell.swift */; };
 		93BF115C1D4E9CF5007A2A5A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF115B1D4E9CF5007A2A5A /* TableViewController.swift */; };
 		93BF1BA91DA9607B0021412B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BF1BA81DA9607B0021412B /* FirstViewController.swift */; };
 		93D204B61DA97D8D00AFC844 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 93D204B51DA97D8D00AFC844 /* GoogleService-Info.plist */; };
@@ -51,6 +52,7 @@
 		936589851DA963A10089A3CA /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		936589871DA963B80089A3CA /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		93690A851DB27B77003B497C /* ChooseUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseUserViewController.swift; sourceTree = "<group>"; };
+		93690A871DB2A0D5003B497C /* FirstTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTableViewCell.swift; sourceTree = "<group>"; };
 		93BF115B1D4E9CF5007A2A5A /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		93BF1BA81DA9607B0021412B /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		93D204B51DA97D8D00AFC844 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				93BF1BA81DA9607B0021412B /* FirstViewController.swift */,
+				93690A871DB2A0D5003B497C /* FirstTableViewCell.swift */,
 				936589811DA963500089A3CA /* SecondViewController.swift */,
 				93BF115B1D4E9CF5007A2A5A /* TableViewController.swift */,
 				930D855C1D9B3FA600D33293 /* LocationViewController.swift */,
@@ -301,6 +304,7 @@
 				936589881DA963B80089A3CA /* WelcomeViewController.swift in Sources */,
 				9336E3751D3860A0009CA15D /* ProgressHUD.m in Sources */,
 				93690A861DB27B77003B497C /* ChooseUserViewController.swift in Sources */,
+				93690A881DB2A0D5003B497C /* FirstTableViewCell.swift in Sources */,
 				8E1677121D1C1BAA004F88D0 /* AppDelegate.swift in Sources */,
 				93BF1BA91DA9607B0021412B /* FirstViewController.swift in Sources */,
 				8E34A6D41D9094F5006B409A /* ActivityDescriptionController.swift in Sources */,
