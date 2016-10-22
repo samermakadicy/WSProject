@@ -17,16 +17,16 @@ class WelcomeViewController: UIViewController {
     var alpha: CGFloat = 1.0
     var cornerRadius: CGFloat = 10.0
     
-    var currentUser: BackendlessUser?
+    //var currentUser: BackendlessUser?
     
     
     override func viewDidAppear(_ animated: Bool) {
         
-        backendless?.userService.setStayLoggedIn(true)
+        //backendless?.userService.setStayLoggedIn(true)
         
-        currentUser = backendless?.userService.currentUser
+        //currentUser = backendless?.userService.currentUser
         
-        
+        /*
         if currentUser != nil {
             
             print("User is already logged in")
@@ -45,7 +45,7 @@ class WelcomeViewController: UIViewController {
         else {
             print("User is NOT logged in")
         }
-        
+        */
     }
     
     override func viewDidLoad() {

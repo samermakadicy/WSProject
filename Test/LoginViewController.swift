@@ -7,15 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
-    var email: String?
-    var password: String?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,12 +32,9 @@ class LoginViewController: UIViewController {
         
         if emailTextField.text != "" && passwordTextField.text != "" {
             
-            email = emailTextField.text
-            password = passwordTextField.text
-            
             ProgressHUD.show("Logging in...")
             
-            loginUser(self.email!, password: self.password!)
+            self.loginUser()
         }
             
         else {
@@ -49,23 +43,41 @@ class LoginViewController: UIViewController {
         
     }
     
-    func loginUser(_ email: String, password: String) {
+    func loginUser() {
         
-            backendless?.userService.login(email, password: password, response: { (user: BackendlessUser?) in
+        FIRAuth.auth()?.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (FIRUser, error) in
             
-            ProgressHUD.dismiss()
-            
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FirstVC") as! UITabBarController
-            
-            vc.selectedIndex = 0
-            
-            self.present(vc, animated: true, completion: nil)
-
-            }, error: { (error: Fault?) in
+            if error == nil
+            {
+                ProgressHUD.dismiss()
                 
-                ProgressHUD.showError("Incorrect Username/Password")
+                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FirstVC") as! UITabBarController
                 
+                vc.selectedIndex = 0
+                
+                self.present(vc, animated: true, completion: nil)
+            }
+                
+            else
+            {
+                var errorMessage: String
+                let errorFound = error as! NSError
+                
+                
+                if errorFound.localizedDescription == "The email address is badly formatted." {
+                    errorMessage = "Email format not accepted"
+                }
+                else if errorFound.localizedDescription == "The password is invalid or the user does not have a password."
+                {
+                    errorMessage = "The password is incorrect"
+                }
+                else
+                {
+                    errorMessage = errorFound.localizedDescription
+                }
+                
+                ProgressHUD.showError(errorMessage)
+            }
         })
-        
     }
 }

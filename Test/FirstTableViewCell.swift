@@ -27,7 +27,7 @@ class FirstTableViewCell: UITableViewCell {
     
     func bindData(recent: NSDictionary) {
     
-        let withUserId = (recent.object(forKey: "withUserUserIdp") as? String)!
+        let withUserId = (recent.object(forKey: "withUserUserId") as? String)!
         
         let whereClause = "objectId = '\(withUserId)'"
         let dataQuery = BackendlessDataQuery()
@@ -36,15 +36,16 @@ class FirstTableViewCell: UITableViewCell {
         
         let dataStore = backendless?.persistenceService.of(Backendless.ofClass())
         
-        /*dataStore?.find(dataQuery, response: { (users: BackendlessCollection?) in
+        dataStore?.find(dataQuery, response: { (users: BackendlessCollection?) in
             
-            let withUser = users.data.first as! BackendlessUser
+            let withUser = users?.data.first as! BackendlessUser
+            
             
             
             
             }, error: { (fault: Fault?) in
                 print("Error: \(fault)")
-        }) */
+        })
         
         activityTitle.text = recent["withUserUsername"] as? String
         friendName.text = recent[""] as? String
