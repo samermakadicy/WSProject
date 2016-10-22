@@ -51,6 +51,17 @@ class LoginViewController: UIViewController {
             {
                 ProgressHUD.dismiss()
                 
+                UserDefaults.standard.setValue(self.emailTextField.text!, forKey: "epass")
+                UserDefaults.standard.setValue(self.passwordTextField.text!, forKey: "auth")
+                
+                
+                //UserDefaults.standard.setValue(FIREmailPasswordAuthProvider.credential(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!), forKey: "user")
+                
+                
+                //UserDefaults.standard.setValue(FIREmailPasswordAuthProvider.credential(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!), forKey: "cred")
+                
+                //userCredential = FIREmailPasswordAuthProvider.credential(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!)
+                
                 let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FirstVC") as! UITabBarController
                 
                 vc.selectedIndex = 0

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Foundation
+import Firebase
 
 class WelcomeViewController: UIViewController {
     
@@ -16,36 +18,48 @@ class WelcomeViewController: UIViewController {
     var borderWidth: CGFloat = 2.0
     var alpha: CGFloat = 1.0
     var cornerRadius: CGFloat = 10.0
+    var email: String = ""
+    var password: String = ""
+    
+    
     
     //var currentUser: BackendlessUser?
     
     
     override func viewDidAppear(_ animated: Bool) {
         
-        //backendless?.userService.setStayLoggedIn(true)
+        let user = FIRAuth.auth()?.currentUser
         
-        //currentUser = backendless?.userService.currentUser
-        
-        /*
-        if currentUser != nil {
+        if UserDefaults.standard.value(forKey: "epass") != nil
+        {
+            let userCredential: FIRAuthCredential = FIREmailPasswordAuthProvider.credential(withEmail: UserDefaults.standard.value(forKey: "epass") as! String, password: UserDefaults.standard.value(forKey: "auth") as! String)
             
-            print("User is already logged in")
-            
-            
-            DispatchQueue.main.async {
-                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FirstVC") as! UITabBarController
+            user?.reauthenticate(with: userCredential, completion: { (error) in
                 
-                vc.selectedIndex = 0
-                
-                self.present(vc, animated: true, completion: nil)
-                
-            }
+                if error == nil
+                {
+                    print("***** user found")
+                    
+                    DispatchQueue.main.async {
+                        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FirstVC") as! UITabBarController
+                        
+                        vc.selectedIndex = 0
+                        
+                        self.present(vc, animated: false, completion: nil)
+                    }
+                }
+                    
+                else
+                {
+                    print("**** user not found")
+                    
+                    try! FIRAuth.auth()?.signOut()
+                    
+                    UserDefaults.standard.setValue("", forKey: "epass")
+                    UserDefaults.standard.setValue("", forKey: "auth")
+                }
+            })
         }
-            
-        else {
-            print("User is NOT logged in")
-        }
-        */
     }
     
     override func viewDidLoad() {
@@ -61,8 +75,6 @@ class WelcomeViewController: UIViewController {
         loginButton.layer.borderWidth = borderWidth
         loginButton.layer.borderColor = UIColor(white: 1.0, alpha: alpha).cgColor
         loginButton.layer.cornerRadius = cornerRadius
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -73,4 +85,44 @@ class WelcomeViewController: UIViewController {
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return UIStatusBarStyle.lightContent
     }
+    
+    
+    func loginUser() {
+        
+        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (FIRUser, error) in
+            
+            if error == nil
+            {
+                DispatchQueue.main.async {
+                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FirstVC") as! UITabBarController
+                    
+                    vc.selectedIndex = 0
+                    
+                    self.present(vc, animated: true, completion: nil)
+                }
+            }
+                
+            else
+            {
+                var errorMessage: String
+                let errorFound = error as! NSError
+                
+                
+                if errorFound.localizedDescription == "The email address is badly formatted." {
+                    errorMessage = "Email format not accepted"
+                }
+                else if errorFound.localizedDescription == "The password is invalid or the user does not have a password."
+                {
+                    errorMessage = "The password is incorrect"
+                }
+                else
+                {
+                    errorMessage = errorFound.localizedDescription
+                }
+                
+                ProgressHUD.showError(errorMessage)
+            }
+        })
+    }
+
 }
