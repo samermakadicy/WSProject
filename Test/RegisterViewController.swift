@@ -46,7 +46,7 @@ class RegisterViewController: UIViewController {
         FIRAuth.auth()?.createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (FIRUser, error) in
             
             if error == nil {
-                ProgressHUD.show("User Registered")
+                ProgressHUD.show("Logging in...")
                 self.loginUser()
             }
             
@@ -77,15 +77,8 @@ class RegisterViewController: UIViewController {
             {
                 ProgressHUD.dismiss()
                 
-               
                 UserDefaults.standard.setValue(self.emailTextField.text!, forKey: "epass")
                 UserDefaults.standard.setValue(self.passwordTextField.text!, forKey: "auth")
-                
-                
-                //UserDefaults.standard.setValue(FIREmailPasswordAuthProvider.credential(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!), forKey: "cred")
-                
-                
-                //userCredential = FIREmailPasswordAuthProvider.credential(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!)
                 
                 let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FirstVC") as! UITabBarController
                 
@@ -106,6 +99,10 @@ class RegisterViewController: UIViewController {
                 else if errorFound.localizedDescription == "The password is invalid or the user does not have a password."
                 {
                     errorMessage = "The password is incorrect"
+                }
+                else if errorFound.localizedDescription == "There is no user record corresponding to this identifier. The user may have been deleted."
+                {
+                    errorMessage = "User not found"
                 }
                 else
                 {
