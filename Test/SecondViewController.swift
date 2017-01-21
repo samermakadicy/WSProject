@@ -33,9 +33,9 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         
         
         activityList.removeAll()
-        //tableView.reloadData()
         
-        print("In view did load")
+        
+       // print("In view did load")
         
         
         FIRReference = FIRDatabase.database().reference()
@@ -51,13 +51,15 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
                 let currentActivityName = value?["activityName"] as? String ?? ""
                 let currentActivityDate = value?["activityDate"] as? String ?? ""
                 
+                print("^^^^^" + currentActivityName)
+                print("^^^^^" + currentActivityDate)
                 
                 activityList.append(currentActivityName)
                 dateList.append(currentActivityDate)
+                
+                self.activityListTable.reloadData()
             }
         })
-        
-        activityListTable.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -97,6 +99,8 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
             activityListTable.reloadData()
         }
     }
+    
+    
     
     
     override func viewDidAppear(_ animated: Bool) {
