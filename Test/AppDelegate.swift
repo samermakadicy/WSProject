@@ -14,9 +14,9 @@ import FirebaseDatabase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
   
-    let APP_ID = "B5B09530-C1B6-E7F5-FFA9-63D34A729A00"
-    let SECRET_KEY = "3D047BB7-E5C4-12E0-FF14-563F6A96CF00"
-    let VERSION_NUM = "v1"
+    //let APP_ID = "B5B09530-C1B6-E7F5-FFA9-63D34A729A00"
+    //let SECRET_KEY = "3D047BB7-E5C4-12E0-FF14-563F6A96CF00"
+    //let VERSION_NUM = "v1"
     
     var window: UIWindow?
     
@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        backendless?.initApp(APP_ID, secret:SECRET_KEY, version:VERSION_NUM)
+        //backendless?.initApp(APP_ID, secret:SECRET_KEY, version:VERSION_NUM)
         // If you plan to use Backendless Media Service, uncomment the following line (iOS ONLY!)
         // backendless.mediaService = MediaService()
 

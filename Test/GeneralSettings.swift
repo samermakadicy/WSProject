@@ -17,8 +17,8 @@ var descriptionList = [String] ()
 
 var currentRow: Int = 0
 
-var backendless = Backendless.sharedInstance()
-var theCurrentUser = backendless?.userService.currentUser
+//var backendless = Backendless.sharedInstance()
+//var theCurrentUser = backendless?.userService.currentUser
 
 
 //let vc = nil

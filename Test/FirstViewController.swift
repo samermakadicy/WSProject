@@ -8,11 +8,11 @@
 
 import UIKit
 
-class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FirstViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var friendsActivityTableView: UITableView!
-    var users: [BackendlessUser] = []
-    var currentUser: BackendlessUser!
+    //var users: [BackendlessUser] = []
+    //var currentUser: BackendlessUser!
     
     
     override func viewDidLoad() {
@@ -39,10 +39,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        return 0
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+   /* func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let activityCell = tableView.dequeueReusableCell(withIdentifier: "friendActivityCell", for: indexPath)
         
         let user = users[indexPath.row]
@@ -51,7 +51,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
         return activityCell
     }
-    
+    */
     
     
     
@@ -61,28 +61,28 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         //theCurrentUser is the currently found backendlessuser declared in GeneralSettings.swift
         
-        let whereClause = "objectId != '\(theCurrentUser?.objectId)'"
+        //let whereClause = "objectId != '\(theCurrentUser?.objectId)'"
         
-        let dataQuery = BackendlessDataQuery()
-        dataQuery.whereClause = whereClause
+        //let dataQuery = BackendlessDataQuery()
+        //dataQuery.whereClause = whereClause
         
-        let dataStore = backendless?.persistenceService.of(BackendlessUser.ofClass())
-        dataStore?.find(dataQuery, response: { (users: BackendlessCollection?) -> Void in
+        //let dataStore = backendless?.persistenceService.of(BackendlessUser.ofClass())
+        //dataStore?.find(dataQuery, response: { (users: BackendlessCollection?) -> Void in
             
-            self.users = users?.data as! [BackendlessUser]
-            self.friendsActivityTableView.reloadData()
+            //self.users = users?.data as! [BackendlessUser]
+            //self.friendsActivityTableView.reloadData()
             
-            for user in (users?.data)! {
+            /*for user in (users?.data)! {
                 let u = user as! BackendlessUser
                 print(u.name)
                 
-            }
+            }*/
             
-            }, error: { (fault: Fault?) in
-                print("Error, Couldn't retreive users: \(fault)")
-        })
+            //}, error: { (fault: Fault?) in
+             //   print("Error, Couldn't retreive users: \(fault)")
+       // })
         
-        
+        print("Load users done")
     }
     
     
