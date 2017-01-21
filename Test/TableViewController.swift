@@ -18,7 +18,6 @@ class TableViewController: UITableViewController, UITextViewDelegate {
     
     var pickerVisible = false
     var decVisible = false
-    var items: [ActivityItem] = []
     
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var textView: UITextView!
@@ -30,11 +29,6 @@ class TableViewController: UITableViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        FIRReference = FIRDatabase.database().reference()
-        
-        
-        
         
         tableView.backgroundView = UIImageView(image: UIImage(named: "Palms.jpg"))
         tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
@@ -143,21 +137,12 @@ class TableViewController: UITableViewController, UITextViewDelegate {
             
         
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FirstVC") as! UITabBarController
-            
             vc.selectedIndex = 1
-            
             self.present(vc, animated: true, completion: nil)
-            
             tabBarController?.selectedIndex = 1
             
             
-            
-          
-            
-            
-            
-                       //UserDefaults.standard.set(activityList, forKey: "activityList")
-            //UserDefaults.standard.set(dateList, forKey: "dateList")
+           // vc.loadView()
         }
     }
     

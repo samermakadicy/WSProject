@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SecondViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -15,6 +16,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         activityListTable.backgroundColor = UIColor.clear
         
@@ -27,6 +29,35 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         if UserDefaults.standard.object(forKey: "dateList") != nil {
             dateList = UserDefaults.standard.object(forKey: "dateList") as! [String]
         }
+        
+        
+        
+        activityList.removeAll()
+        //tableView.reloadData()
+        
+        print("In view did load")
+        
+        
+        FIRReference = FIRDatabase.database().reference()
+        
+        FIRReference.observe(FIRDataEventType.value, with: { (snapshot) in
+            
+            for item in snapshot.children
+            {
+                print("*** item ***: ", item)
+                
+                let currentActivity = item as! FIRDataSnapshot
+                let value = currentActivity.value as? NSDictionary
+                let currentActivityName = value?["activityName"] as? String ?? ""
+                let currentActivityDate = value?["activityDate"] as? String ?? ""
+                
+                
+                activityList.append(currentActivityName)
+                dateList.append(currentActivityDate)
+            }
+        })
+        
+        activityListTable.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -65,7 +96,6 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
             
             activityListTable.reloadData()
         }
-        
     }
     
     
