@@ -17,6 +17,7 @@
 		8E75A5C91D902D8600E451C5 /* UnderwaterBG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E75A5C81D902D8600E451C5 /* UnderwaterBG.jpg */; };
 		8E75A5CB1D902D9600E451C5 /* Palms.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E75A5CA1D902D9600E451C5 /* Palms.jpg */; };
 		930D855D1D9B3FA600D33293 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930D855C1D9B3FA600D33293 /* LocationViewController.swift */; };
+		9315F1C11E33DB7400F4AA2A /* ActivityItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9315F1C01E33DB7400F4AA2A /* ActivityItem.swift */; };
 		9328A2D21D35645B0002E6B5 /* GeneralSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9328A2D11D35645B0002E6B5 /* GeneralSettings.swift */; };
 		9336E3741D3860A0009CA15D /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9336E3711D3860A0009CA15D /* ProgressHUD.bundle */; };
 		9336E3751D3860A0009CA15D /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9336E3731D3860A0009CA15D /* ProgressHUD.m */; };
@@ -43,6 +44,7 @@
 		8E75A5C81D902D8600E451C5 /* UnderwaterBG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = UnderwaterBG.jpg; sourceTree = "<group>"; };
 		8E75A5CA1D902D9600E451C5 /* Palms.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Palms.jpg; sourceTree = "<group>"; };
 		930D855C1D9B3FA600D33293 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		9315F1C01E33DB7400F4AA2A /* ActivityItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityItem.swift; sourceTree = "<group>"; };
 		9328A2D11D35645B0002E6B5 /* GeneralSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralSettings.swift; sourceTree = "<group>"; };
 		9336E3711D3860A0009CA15D /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
 		9336E3721D3860A0009CA15D /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				93690A871DB2A0D5003B497C /* FirstTableViewCell.swift */,
 				936589811DA963500089A3CA /* SecondViewController.swift */,
 				93BF115B1D4E9CF5007A2A5A /* TableViewController.swift */,
+				9315F1C01E33DB7400F4AA2A /* ActivityItem.swift */,
 				930D855C1D9B3FA600D33293 /* LocationViewController.swift */,
 				8E34A6D31D9094F5006B409A /* ActivityDescriptionController.swift */,
 				93690A851DB27B77003B497C /* ChooseUserViewController.swift */,
@@ -310,6 +313,7 @@
 				8E34A6D41D9094F5006B409A /* ActivityDescriptionController.swift in Sources */,
 				930D855D1D9B3FA600D33293 /* LocationViewController.swift in Sources */,
 				93BF115C1D4E9CF5007A2A5A /* TableViewController.swift in Sources */,
+				9315F1C11E33DB7400F4AA2A /* ActivityItem.swift in Sources */,
 				9328A2D21D35645B0002E6B5 /* GeneralSettings.swift in Sources */,
 				936589861DA963A10089A3CA /* LoginViewController.swift in Sources */,
 			);

@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import Firebase
 
 let cellID = "cell"
+var FIRReference: FIRDatabaseReference!
+
 
 
 class TableViewController: UITableViewController, UITextViewDelegate {
     
     var pickerVisible = false
     var decVisible = false
+    var items: [ActivityItem] = []
     
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var textView: UITextView!
@@ -26,6 +30,10 @@ class TableViewController: UITableViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        FIRReference = FIRDatabase.database().reference()
+        
+        
         
         
         tableView.backgroundView = UIImageView(image: UIImage(named: "Palms.jpg"))
@@ -41,17 +49,6 @@ class TableViewController: UITableViewController, UITextViewDelegate {
         
         activityTextField.text = ""
     }
-    
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-//        if (segue.identifier == "segueTest") {
-//            let svc = segue.destinationViewController as! ActivityDescriptionController;
-//
-//            svc.locationField = locationTextField.text
-            
-//        }
-//    }
-    
-    
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         
@@ -82,16 +79,7 @@ class TableViewController: UITableViewController, UITextViewDelegate {
     }
     
     
-    //    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-    //        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView //recast your view as a UITableViewHeaderFooterView
-    //        header.contentView.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0) //make the background color light blue
-    //        header.textLabel!.textColor = UIColor.blackColor() //make the text white
-    //       header.alpha = 0.5 //make the header transparent
-    //        header.textLabel!.font = UIFont.systemFontOfSize(13.0)
-    //(name: "Montserrat", size: 5.0)
-    //    }
-    
-    
+    // Date Picker visiblity settings
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if(indexPath as NSIndexPath).row == 0 {
@@ -109,6 +97,7 @@ class TableViewController: UITableViewController, UITextViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    // Date Picker height settings
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         if ((indexPath as NSIndexPath).row == 1 && (indexPath as NSIndexPath).section == 2) {
@@ -141,11 +130,18 @@ class TableViewController: UITableViewController, UITextViewDelegate {
     @IBAction func saveActivityBarButton(_ sender: AnyObject) {
         
         if activityTextField.text! != "" {
-            activityList.append(activityTextField.text!)
-            dateList.append(selectedDate.text!)
-            print(activityList)
-            print(dateList)
             
+            
+            let activityTitle = activityTextField.text!
+            let activityDate = selectedDate.text!
+            
+            let newActivity = ActivityItem(activityName: activityTitle, activityDate: activityDate, addedByUser: (FIRAuth.auth()?.currentUser!.email)!)
+            
+            let activityReference = FIRReference.child(activityTitle.lowercased())
+            activityReference.setValue(newActivity.toAnyObject())
+
+            
+        
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FirstVC") as! UITabBarController
             
             vc.selectedIndex = 1
@@ -154,29 +150,18 @@ class TableViewController: UITableViewController, UITextViewDelegate {
             
             tabBarController?.selectedIndex = 1
             
-            UserDefaults.standard.set(activityList, forKey: "activityList")
-            UserDefaults.standard.set(dateList, forKey: "dateList")
+            
+            
+          
+            
+            
+            
+                       //UserDefaults.standard.set(activityList, forKey: "activityList")
+            //UserDefaults.standard.set(dateList, forKey: "dateList")
         }
     }
-       
-    
-    @IBAction func cancelToMyActivitiesViewController(_ segue:UIStoryboardSegue) {
-    }
     
     
     
-
-    /*
-    func switchToDataTab(){
-        NSTimer.scheduledTimerWithTimeInterval(0.2,
-            target: self,
-            selector: "switchToDataTabCont",
-            userInfo: nil,
-            repeats: false)
-    }
     
-    func switchToDataTabCont(){
-        tabBarController!.selectedIndex = 1
-    }
-*/
 }

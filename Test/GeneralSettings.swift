@@ -17,8 +17,6 @@ var descriptionList = [String] ()
 
 var currentRow: Int = 0
 
-//var backendless = Backendless.sharedInstance()
-//var theCurrentUser = backendless?.userService.currentUser
-
+//var ref: FIRDatabaseReference!
 
 //let vc = nil
