@@ -31,27 +31,30 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         }
         */
         
+        FIRReference = FIRDatabase.database().reference()
         
+        activityList.removeAll()
+        dateList.removeAll()
+
         
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
         
         activityListTable.addSubview(refreshControl)
         
-       // print("In view did load")
+        
+        didPullToRefresh(refreshControl: refreshControl)
+        
+        print("**** In view did load")
     }
     
+
     func didPullToRefresh(refreshControl: UIRefreshControl)
     {
         activityList.removeAll()
         dateList.removeAll()
         activityListTable.reloadData()
         
-        
-        print("****", activityList)
-        
-        
-        FIRReference = FIRDatabase.database().reference()
         
         FIRReference.observe(FIRDataEventType.value, with: { (snapshot) in
             
@@ -74,6 +77,10 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
             }
         })
         
+        
+        
+        activityList.removeAll()
+        dateList.removeAll()
        
         refreshControl.endRefreshing()
     }
@@ -118,47 +125,12 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
             activityListTable.reloadData()
         }
     }
+
     
-    
-    override func viewDidDisappear(_ animated: Bool) {
+   /* override func viewDidAppear(_ animated: Bool) {
         activityList.removeAll()
         dateList.removeAll()
 
         activityListTable.reloadData()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        activityList.removeAll()
-        dateList.removeAll()
-        activityListTable.reloadData()
-
-        
-        print("****", activityList)
-        
-        
-        FIRReference = FIRDatabase.database().reference()
-        
-        FIRReference.observe(FIRDataEventType.value, with: { (snapshot) in
-            
-            for item in snapshot.children
-            {
-                //print("*** item ***: ", item)
-                
-                let currentActivity = item as! FIRDataSnapshot
-                let value = currentActivity.value as? NSDictionary
-                let currentActivityName = value?["activityName"] as? String ?? ""
-                let currentActivityDate = value?["activityDate"] as? String ?? ""
-                
-                //print("^^^^^" + currentActivityName)
-                //print("^^^^^" + currentActivityDate)
-                
-                activityList.append(currentActivityName)
-                dateList.append(currentActivityDate)
-                
-                self.activityListTable.reloadData()
-            }
-        })
-
-    }
-    
+    }*/
 }
