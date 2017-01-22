@@ -35,31 +35,6 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
                
         
        // print("In view did load")
-        activityList.removeAll()
-        dateList.removeAll()
-        
-        FIRReference = FIRDatabase.database().reference()
-        
-        FIRReference.observe(FIRDataEventType.value, with: { (snapshot) in
-            
-            for item in snapshot.children
-            {
-                //print("*** item ***: ", item)
-                
-                let currentActivity = item as! FIRDataSnapshot
-                let value = currentActivity.value as? NSDictionary
-                let currentActivityName = value?["activityName"] as? String ?? ""
-                let currentActivityDate = value?["activityDate"] as? String ?? ""
-                
-                //print("^^^^^" + currentActivityName)
-                //print("^^^^^" + currentActivityDate)
-                
-                activityList.append(currentActivityName)
-                dateList.append(currentActivityDate)
-                
-                self.activityListTable.reloadData()
-            }
-        })
     }
     
     override func didReceiveMemoryWarning() {
@@ -91,21 +66,54 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         
         if editingStyle == UITableViewCellEditingStyle.delete {
             activityList.remove(at: (indexPath as NSIndexPath).row)
-            UserDefaults.standard.set(activityList, forKey: "activityList")
+            //UserDefaults.standard.set(activityList, forKey: "activityList")
             
             dateList.remove(at: (indexPath as NSIndexPath).row)
-            UserDefaults.standard.set(dateList, forKey: "dateList")
+            //UserDefaults.standard.set(dateList, forKey: "dateList")
             
             activityListTable.reloadData()
         }
     }
     
     
-    
+    override func viewDidDisappear(_ animated: Bool) {
+        activityList.removeAll()
+        dateList.removeAll()
+
+        activityListTable.reloadData()
+    }
     
     override func viewDidAppear(_ animated: Bool) {
+        activityList.removeAll()
+        dateList.removeAll()
         
-        activityListTable.reloadData()
+        
+        print("****", activityList)
+        
+        
+        FIRReference = FIRDatabase.database().reference()
+        
+        FIRReference.observe(FIRDataEventType.value, with: { (snapshot) in
+            
+            for item in snapshot.children
+            {
+                //print("*** item ***: ", item)
+                
+                let currentActivity = item as! FIRDataSnapshot
+                let value = currentActivity.value as? NSDictionary
+                let currentActivityName = value?["activityName"] as? String ?? ""
+                let currentActivityDate = value?["activityDate"] as? String ?? ""
+                
+                //print("^^^^^" + currentActivityName)
+                //print("^^^^^" + currentActivityDate)
+                
+                activityList.append(currentActivityName)
+                dateList.append(currentActivityDate)
+                
+                self.activityListTable.reloadData()
+            }
+        })
+
     }
     
 }
