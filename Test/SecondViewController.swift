@@ -36,7 +36,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         
        // print("In view did load")
         activityList.removeAll()
-        
+        dateList.removeAll()
         
         FIRReference = FIRDatabase.database().reference()
         
