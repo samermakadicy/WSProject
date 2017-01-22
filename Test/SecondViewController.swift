@@ -20,7 +20,7 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         
         activityListTable.backgroundColor = UIColor.clear
         
-        
+        /*
         if UserDefaults.standard.object(forKey: "activityList") != nil {
             
             activityList = UserDefaults.standard.object(forKey: "activityList") as! [String]
@@ -29,13 +29,13 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         if UserDefaults.standard.object(forKey: "dateList") != nil {
             dateList = UserDefaults.standard.object(forKey: "dateList") as! [String]
         }
+        */
         
         
-        
-        activityList.removeAll()
-        
+               
         
        // print("In view did load")
+        activityList.removeAll()
         
         
         FIRReference = FIRDatabase.database().reference()
@@ -44,15 +44,15 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
             
             for item in snapshot.children
             {
-                print("*** item ***: ", item)
+                //print("*** item ***: ", item)
                 
                 let currentActivity = item as! FIRDataSnapshot
                 let value = currentActivity.value as? NSDictionary
                 let currentActivityName = value?["activityName"] as? String ?? ""
                 let currentActivityDate = value?["activityDate"] as? String ?? ""
                 
-                print("^^^^^" + currentActivityName)
-                print("^^^^^" + currentActivityDate)
+                //print("^^^^^" + currentActivityName)
+                //print("^^^^^" + currentActivityDate)
                 
                 activityList.append(currentActivityName)
                 dateList.append(currentActivityDate)
